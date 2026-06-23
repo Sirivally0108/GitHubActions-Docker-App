@@ -6,13 +6,10 @@ on:
       - main
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-
     - name: Checkout Code
       uses: actions/checkout@v4
 
@@ -23,9 +20,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Image
-      run: |
-        docker build -t sirivally0108/github-actions-app:latest .
+      run: docker build -t sirivally0108/github-actions-app:latest .
 
     - name: Push Image
-      run: |
-        docker push sirivally0108/github-actions-app:latest
+      run: docker push sirivally0108/github-actions-app:latest
